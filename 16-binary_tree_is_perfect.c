@@ -1,5 +1,6 @@
 #include "binary_trees.h"
-#include <math.h>
+
+double _pow(double base, int exponent);
 
 /**
  * binary_tree_is_perfect - check if the tree if perfect.
@@ -16,7 +17,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	height = binary_tree_height(tree);
 
-	ex_number_nodes = pow(2, (height + 1)) - 1;
+	ex_number_nodes = _pow(2, (height + 1)) - 1;
 
 	real_number_node = binary_tree_size(tree);
 
@@ -50,6 +51,31 @@ size_t binary_tree_size(const binary_tree_t *tree)
 	return (counter);
 }
 
+/**
+ * _pow - calculates the power of a number.
+ * @base: the base number.
+ * @exponent: the exponent to raise the base to.
+ * Return: the result of base raised to the power of exponent.
+ */
+double _pow(double base, int exponent)
+{
+	double result = 1.0;
+	int i;
+
+	// Handle negative exponents
+	if (exponent < 0)
+	{
+		base = 1 / base;
+		exponent = -exponent;
+	}
+
+	for (i = 0; i < exponent; i++)
+	{
+		result *= base;
+	}
+
+	return result;
+}
 
 /**
  * binary_tree_height - meature the height.
