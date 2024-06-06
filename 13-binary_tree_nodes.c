@@ -23,12 +23,10 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 
 	if (tree->right)
 	{
+		if (counter == 0)
 		counter++;
 		counter += binary_tree_nodes(tree->right);
 	}
-
-	if (!(tree->parent))
-	counter--;
 
 	return (counter);
 }
