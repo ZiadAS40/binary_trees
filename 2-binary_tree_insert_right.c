@@ -7,17 +7,20 @@
  * @value: the value to be added
  * Return: if success return a pointer to the new node
  * if fails return NULL.
-*/
+ */
 
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
 	binary_tree_t *newNode = malloc(sizeof(binary_tree_t));
 
 	if (!newNode)
-	return (NULL);
+		return (NULL);
 
 	if (!parent)
-	free(newNode);
+	{
+		free(newNode);
+		return (NULL);
+	}
 
 	newNode->n = value;
 	newNode->parent = parent;
@@ -32,4 +35,3 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 
 	return (newNode);
 }
-
