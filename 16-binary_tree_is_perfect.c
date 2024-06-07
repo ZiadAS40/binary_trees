@@ -57,12 +57,12 @@ size_t binary_tree_size(const binary_tree_t *tree)
  * @exponent: the exponent to raise the base to.
  * Return: the result of base raised to the power of exponent.
  */
+
 double _pow(double base, int exponent)
 {
 	double result = 1.0;
 	int i;
 
-	// Handle negative exponents
 	if (exponent < 0)
 	{
 		base = 1 / base;
@@ -74,7 +74,7 @@ double _pow(double base, int exponent)
 		result *= base;
 	}
 
-	return result;
+	return (result);
 }
 
 /**
